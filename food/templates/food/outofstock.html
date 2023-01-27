@@ -1,0 +1,17 @@
+{% extends './base.html' %} {% block content %}
+<div class="row justify-content-center">
+	<div class="col-10">
+		{% for item in products %}
+
+		<p>{{item.name}}</p>
+
+		{% endfor %}
+	</div>
+</div>
+<div class="row justify-content-center">
+  <form action="/outofstock/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form></div>
+{% endblock %}
